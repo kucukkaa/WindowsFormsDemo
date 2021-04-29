@@ -1,6 +1,7 @@
 ﻿using Northwind.Bussiness.Abstract;
 using Northwind.Bussiness.Concrete;
 using Northwind.DataAccess.Concrete.EntityFramework;
+using Northwind.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,17 +20,118 @@ namespace Northwind.WebFormsUI
         {
             InitializeComponent();
             _productService = new ProductManager(new EfProdcutDal());
+            _categoryService = new CategoryManager(new EfCategoryDal());
         }
 
         private IProductService _productService;
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private ICategoryService _categoryService;
+        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoadProducts();
+            LoadCategories();
+        }
+
+        private void LoadCategories()
+        {
+            cbxCategory.DataSource = _categoryService.GetAll();
+            cbxCategory.DisplayMember = "CategoryName";
+            cbxCategory.ValueMember = "CategoryId";
+
+            cbxCategoryId.DataSource = _categoryService.GetAll();
+            cbxCategoryId.DisplayMember = "CategoryName";
+            cbxCategoryId.ValueMember = "CategoryId";
+
+            cbxCategoryUpdate.DataSource = _categoryService.GetAll();
+            cbxCategoryUpdate.DisplayMember = "CategoryName";
+            cbxCategoryUpdate.ValueMember = "CategoryId";
+        }
+
+        private void LoadProducts()
+        {
+            dgwProduct.DataSource = _productService.GetAll();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgwProduct.DataSource = _productService.GetAll();
+            try
+            {
+                dgwProduct.DataSource = _productService.GetProdcutsByCategory(Convert.ToInt32(cbxCategory.SelectedValue));
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void tbxProductName_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(tbxProductName.Text))
+            {
+                dgwProduct.DataSource = _productService.GetProdcutsByProductName(tbxProductName.Text);
+            }
+            else
+            {
+                LoadProducts();
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            _productService.Add(new Product
+            {
+                CategoryId = Convert.ToInt32(cbxCategoryId.SelectedValue),
+                ProductName = tbxProductName2.Text,
+                UnitPrice = Convert.ToDecimal(tbxUnitPrice.Text),
+                UnitsInStock = Convert.ToInt16(tbxStock.Text),
+                QuantityPerUnit = tbxQuantityPerUnit.Text,
+            });
+
+            MessageBox.Show("Ürün Eklendi!");
+            LoadProducts();
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            _productService.Update(new Product
+            {
+                ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
+                ProductName = tbxProductNameUpdate.Text,
+                CategoryId = Convert.ToInt32(cbxCategoryUpdate.SelectedValue),
+                UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text),
+                UnitsInStock = Convert.ToInt16(tbxStockUpdate.Text),
+                QuantityPerUnit = tbxQuantityPerUnitUpdate.Text
+            });
+
+            MessageBox.Show("Ürün Güncellendi!");
+            LoadProducts();
+        }
+
+        private void dgwProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var row = dgwProduct.CurrentRow;
+            tbxProductNameUpdate.Text = row.Cells[2].Value.ToString();
+            cbxCategoryUpdate.SelectedValue = row.Cells[1].Value;
+            tbxUnitPriceUpdate.Text = row.Cells[3].Value.ToString();
+            tbxQuantityPerUnitUpdate.Text = row.Cells[4].Value.ToString();
+            tbxStockUpdate.Text = row.Cells[5].Value.ToString();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            _productService.Delete(new Product
+            {
+                ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value)
+            });
+            MessageBox.Show("Ürün Silindi!");
+            LoadProducts();
         }
     }
 }
