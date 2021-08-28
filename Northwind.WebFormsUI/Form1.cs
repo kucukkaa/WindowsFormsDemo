@@ -1,5 +1,6 @@
 ﻿using Northwind.Bussiness.Abstract;
 using Northwind.Bussiness.Concrete;
+using Northwind.Bussiness.DependencyResolvers.Ninject;
 using Northwind.DataAccess.Concrete.EntityFramework;
 using Northwind.Entities.Concrete;
 using System;
@@ -19,8 +20,8 @@ namespace Northwind.WebFormsUI
         public Form1()
         {
             InitializeComponent();
-            _productService = new ProductManager(new EfProdcutDal());
-            _categoryService = new CategoryManager(new EfCategoryDal());
+            _productService = InstanceFactory.GetInstance<IProductService>();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
         }
 
         private IProductService _productService;
@@ -84,18 +85,23 @@ namespace Northwind.WebFormsUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            _productService.Add(new Product
+            try
             {
-                CategoryId = Convert.ToInt32(cbxCategoryId.SelectedValue),
-                ProductName = tbxProductName2.Text,
-                UnitPrice = Convert.ToDecimal(tbxUnitPrice.Text),
-                UnitsInStock = Convert.ToInt16(tbxStock.Text),
-                QuantityPerUnit = tbxQuantityPerUnit.Text,
-            });
-
-            MessageBox.Show("Ürün Eklendi!");
-            LoadProducts();
-
+            _productService.Add(new Product
+                {
+                    CategoryId = Convert.ToInt32(cbxCategoryId.SelectedValue),
+                    ProductName = tbxProductName2.Text,
+                    UnitPrice = Convert.ToDecimal(tbxUnitPrice.Text),
+                    UnitsInStock = Convert.ToInt16(tbxStock.Text),
+                    QuantityPerUnit = tbxQuantityPerUnit.Text,
+                });
+                MessageBox.Show("Ürün Eklendi!");
+                LoadProducts();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -126,12 +132,24 @@ namespace Northwind.WebFormsUI
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            _productService.Delete(new Product
+            if(dgwProduct.CurrentRow != null)
             {
-                ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value)
-            });
-            MessageBox.Show("Ürün Silindi!");
-            LoadProducts();
+                try
+                {
+                    _productService.Delete(new Product
+                    {
+                        ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value)
+                    });
+                    MessageBox.Show("Ürün Silindi!");
+                    LoadProducts();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.InnerException.InnerException.Message);
+                }
+            }            
+            
+            
         }
     }
 }

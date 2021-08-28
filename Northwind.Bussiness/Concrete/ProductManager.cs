@@ -1,4 +1,6 @@
 ﻿using Northwind.Bussiness.Abstract;
+using Northwind.Bussiness.Utilities;
+using Northwind.Bussiness.ValidationRules.FluentValidation;
 using Northwind.DataAccess.Abstract;
 using Northwind.DataAccess.Concrete;
 using Northwind.DataAccess.Concrete.EntityFramework;
@@ -23,6 +25,7 @@ namespace Northwind.Bussiness.Concrete
 
         public void Add(Product product)
         {
+            ValidationTool.Validate(new ProductValidator(), product);
             _productDal.Add(product);
         }
 
