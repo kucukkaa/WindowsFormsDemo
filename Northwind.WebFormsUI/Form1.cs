@@ -51,7 +51,8 @@ namespace Northwind.WebFormsUI
 
         private void LoadProducts()
         {
-            dgwProduct.DataSource = _productService.GetAll();
+            dgwProduct.DataSource = _productService.GetProductsWithCategoryName();
+            dgwProduct.Columns["CategoryId"].Visible = false;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace Northwind.WebFormsUI
         {
             try
             {
-                dgwProduct.DataSource = _productService.GetProdcutsByCategory(Convert.ToInt32(cbxCategory.SelectedValue));
+                dgwProduct.DataSource = _productService.GetProductsWithCategoryNameByCategoryId(Convert.ToInt32(cbxCategory.SelectedValue));
             }
             catch
             {
@@ -75,7 +76,7 @@ namespace Northwind.WebFormsUI
         {
             if (!String.IsNullOrEmpty(tbxProductName.Text))
             {
-                dgwProduct.DataSource = _productService.GetProdcutsByProductName(tbxProductName.Text);
+                dgwProduct.DataSource = _productService.GetProductsWithCategoryNameByProductName(tbxProductName.Text);
             }
             else
             {
@@ -139,11 +140,11 @@ namespace Northwind.WebFormsUI
         private void dgwProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = dgwProduct.CurrentRow;
-            tbxProductNameUpdate.Text = row.Cells[2].Value.ToString();
-            cbxCategoryUpdate.SelectedValue = row.Cells[1].Value;
-            tbxUnitPriceUpdate.Text = row.Cells[3].Value.ToString();
-            tbxQuantityPerUnitUpdate.Text = row.Cells[4].Value.ToString();
-            tbxStockUpdate.Text = row.Cells[5].Value.ToString();
+            tbxProductNameUpdate.Text = row.Cells["ProductName"].Value.ToString();
+            cbxCategoryUpdate.SelectedValue = row.Cells["CategoryId"].Value;
+            tbxUnitPriceUpdate.Text = row.Cells["UnitPrice"].Value.ToString();
+            tbxQuantityPerUnitUpdate.Text = row.Cells["QuantityPerUnit"].Value.ToString();
+            tbxStockUpdate.Text = row.Cells["UnitsInStock"].Value.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -160,7 +161,7 @@ namespace Northwind.WebFormsUI
                         ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
                         ProductName = dgwProduct.CurrentRow.Cells[2].Value.ToString()
                     };
-                    
+
                     _productService.Delete(tempProduct);
                     MessageBox.Show(tempProduct.ProductName + " Silindi!");
                     LoadProducts();

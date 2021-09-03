@@ -1,4 +1,5 @@
 ﻿using Northwind.Entities.Concrete;
+using Northwind.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,9 @@ namespace Northwind.Bussiness.Abstract
         void Add(Product product);
         void Update(Product product);
         void Delete(Product product);
+
+        List<ProductDetailDto> GetProductsWithCategoryName();
+        List<ProductDetailDto> GetProductsWithCategoryNameByCategoryId(int categoryId);
+        List<ProductDetailDto> GetProductsWithCategoryNameByProductName(string productName);
     }
 }

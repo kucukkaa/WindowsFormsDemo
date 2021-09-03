@@ -71,9 +71,11 @@ namespace Northwind.WebFormsUI
             // dgwProduct
             // 
             this.dgwProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwProduct.Location = new System.Drawing.Point(12, 390);
+            this.dgwProduct.Location = new System.Drawing.Point(691, 309);
+            this.dgwProduct.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.dgwProduct.Name = "dgwProduct";
-            this.dgwProduct.Size = new System.Drawing.Size(1126, 210);
+            this.dgwProduct.RowHeadersWidth = 102;
+            this.dgwProduct.Size = new System.Drawing.Size(1980, 466);
             this.dgwProduct.TabIndex = 0;
             this.dgwProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwProduct_CellClick);
             // 
@@ -81,9 +83,11 @@ namespace Northwind.WebFormsUI
             // 
             this.gbxCategory.Controls.Add(this.cbxCategory);
             this.gbxCategory.Controls.Add(this.lblCategory);
-            this.gbxCategory.Location = new System.Drawing.Point(12, 12);
+            this.gbxCategory.Location = new System.Drawing.Point(1498, 34);
+            this.gbxCategory.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.gbxCategory.Name = "gbxCategory";
-            this.gbxCategory.Size = new System.Drawing.Size(1126, 98);
+            this.gbxCategory.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.gbxCategory.Size = new System.Drawing.Size(1313, 238);
             this.gbxCategory.TabIndex = 1;
             this.gbxCategory.TabStop = false;
             this.gbxCategory.Text = "Kategoriye Göre Ara";
@@ -91,18 +95,20 @@ namespace Northwind.WebFormsUI
             // cbxCategory
             // 
             this.cbxCategory.FormattingEnabled = true;
-            this.cbxCategory.Location = new System.Drawing.Point(73, 42);
+            this.cbxCategory.Location = new System.Drawing.Point(195, 100);
+            this.cbxCategory.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(405, 21);
+            this.cbxCategory.Size = new System.Drawing.Size(1073, 39);
             this.cbxCategory.TabIndex = 1;
             this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(21, 45);
+            this.lblCategory.Location = new System.Drawing.Point(56, 107);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(46, 13);
+            this.lblCategory.Size = new System.Drawing.Size(122, 32);
             this.lblCategory.TabIndex = 0;
             this.lblCategory.Text = "Kategori";
             // 
@@ -110,9 +116,11 @@ namespace Northwind.WebFormsUI
             // 
             this.gbxProductName.Controls.Add(this.tbxProductName);
             this.gbxProductName.Controls.Add(this.lblProductName);
-            this.gbxProductName.Location = new System.Drawing.Point(12, 125);
+            this.gbxProductName.Location = new System.Drawing.Point(32, 34);
+            this.gbxProductName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.gbxProductName.Name = "gbxProductName";
-            this.gbxProductName.Size = new System.Drawing.Size(1126, 100);
+            this.gbxProductName.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.gbxProductName.Size = new System.Drawing.Size(1430, 238);
             this.gbxProductName.TabIndex = 2;
             this.gbxProductName.TabStop = false;
             this.gbxProductName.Text = "Ürün Adına Göre Ara";
@@ -120,18 +128,20 @@ namespace Northwind.WebFormsUI
             // 
             // tbxProductName
             // 
-            this.tbxProductName.Location = new System.Drawing.Point(75, 40);
+            this.tbxProductName.Location = new System.Drawing.Point(200, 95);
+            this.tbxProductName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxProductName.Name = "tbxProductName";
-            this.tbxProductName.Size = new System.Drawing.Size(392, 20);
+            this.tbxProductName.Size = new System.Drawing.Size(1039, 38);
             this.tbxProductName.TabIndex = 1;
             this.tbxProductName.TextChanged += new System.EventHandler(this.tbxProductName_TextChanged);
             // 
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(24, 43);
+            this.lblProductName.Location = new System.Drawing.Point(64, 103);
+            this.lblProductName.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(48, 13);
+            this.lblProductName.Size = new System.Drawing.Size(125, 32);
             this.lblProductName.TabIndex = 0;
             this.lblProductName.Text = "Ürün Adı";
             // 
@@ -148,18 +158,21 @@ namespace Northwind.WebFormsUI
             this.gbxProductAdd.Controls.Add(this.lblUnitPrice);
             this.gbxProductAdd.Controls.Add(this.lblCategoryId);
             this.gbxProductAdd.Controls.Add(this.lblProductName2);
-            this.gbxProductAdd.Location = new System.Drawing.Point(12, 231);
+            this.gbxProductAdd.Location = new System.Drawing.Point(32, 937);
+            this.gbxProductAdd.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.gbxProductAdd.Name = "gbxProductAdd";
-            this.gbxProductAdd.Size = new System.Drawing.Size(682, 153);
+            this.gbxProductAdd.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.gbxProductAdd.Size = new System.Drawing.Size(1819, 365);
             this.gbxProductAdd.TabIndex = 3;
             this.gbxProductAdd.TabStop = false;
             this.gbxProductAdd.Text = "Yeni Ürün Ekle";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(474, 95);
+            this.btnAdd.Location = new System.Drawing.Point(1264, 227);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 36);
+            this.btnAdd.Size = new System.Drawing.Size(309, 86);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -167,82 +180,92 @@ namespace Northwind.WebFormsUI
             // 
             // tbxQuantityPerUnit
             // 
-            this.tbxQuantityPerUnit.Location = new System.Drawing.Point(474, 52);
+            this.tbxQuantityPerUnit.Location = new System.Drawing.Point(1264, 124);
+            this.tbxQuantityPerUnit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxQuantityPerUnit.Name = "tbxQuantityPerUnit";
-            this.tbxQuantityPerUnit.Size = new System.Drawing.Size(116, 20);
+            this.tbxQuantityPerUnit.Size = new System.Drawing.Size(303, 38);
             this.tbxQuantityPerUnit.TabIndex = 13;
             // 
             // tbxStock
             // 
-            this.tbxStock.Location = new System.Drawing.Point(474, 17);
+            this.tbxStock.Location = new System.Drawing.Point(1264, 41);
+            this.tbxStock.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxStock.Name = "tbxStock";
-            this.tbxStock.Size = new System.Drawing.Size(116, 20);
+            this.tbxStock.Size = new System.Drawing.Size(303, 38);
             this.tbxStock.TabIndex = 12;
             // 
             // tbxUnitPrice
             // 
-            this.tbxUnitPrice.Location = new System.Drawing.Point(73, 95);
+            this.tbxUnitPrice.Location = new System.Drawing.Point(195, 227);
+            this.tbxUnitPrice.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxUnitPrice.Name = "tbxUnitPrice";
-            this.tbxUnitPrice.Size = new System.Drawing.Size(131, 20);
+            this.tbxUnitPrice.Size = new System.Drawing.Size(343, 38);
             this.tbxUnitPrice.TabIndex = 11;
             // 
             // tbxProductName2
             // 
-            this.tbxProductName2.Location = new System.Drawing.Point(73, 17);
+            this.tbxProductName2.Location = new System.Drawing.Point(195, 41);
+            this.tbxProductName2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxProductName2.Name = "tbxProductName2";
-            this.tbxProductName2.Size = new System.Drawing.Size(279, 20);
+            this.tbxProductName2.Size = new System.Drawing.Size(737, 38);
             this.tbxProductName2.TabIndex = 10;
             // 
             // cbxCategoryId
             // 
             this.cbxCategoryId.FormattingEnabled = true;
-            this.cbxCategoryId.Location = new System.Drawing.Point(73, 52);
+            this.cbxCategoryId.Location = new System.Drawing.Point(195, 124);
+            this.cbxCategoryId.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cbxCategoryId.Name = "cbxCategoryId";
-            this.cbxCategoryId.Size = new System.Drawing.Size(279, 21);
+            this.cbxCategoryId.Size = new System.Drawing.Size(737, 39);
             this.cbxCategoryId.TabIndex = 9;
             // 
             // lblQuantityPerUnit
             // 
             this.lblQuantityPerUnit.AutoSize = true;
-            this.lblQuantityPerUnit.Location = new System.Drawing.Point(396, 55);
+            this.lblQuantityPerUnit.Location = new System.Drawing.Point(1056, 131);
+            this.lblQuantityPerUnit.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblQuantityPerUnit.Name = "lblQuantityPerUnit";
-            this.lblQuantityPerUnit.Size = new System.Drawing.Size(59, 13);
+            this.lblQuantityPerUnit.Size = new System.Drawing.Size(161, 32);
             this.lblQuantityPerUnit.TabIndex = 8;
             this.lblQuantityPerUnit.Text = "Birim Adedi";
             // 
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(396, 20);
+            this.lblStock.Location = new System.Drawing.Point(1056, 48);
+            this.lblStock.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(59, 13);
+            this.lblStock.Size = new System.Drawing.Size(153, 32);
             this.lblStock.TabIndex = 7;
             this.lblStock.Text = "Stok Adedi";
             // 
             // lblUnitPrice
             // 
             this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Location = new System.Drawing.Point(21, 95);
+            this.lblUnitPrice.Location = new System.Drawing.Point(56, 227);
+            this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(29, 13);
+            this.lblUnitPrice.Size = new System.Drawing.Size(77, 32);
             this.lblUnitPrice.TabIndex = 6;
             this.lblUnitPrice.Text = "Fiyat";
             // 
             // lblCategoryId
             // 
             this.lblCategoryId.AutoSize = true;
-            this.lblCategoryId.Location = new System.Drawing.Point(21, 55);
+            this.lblCategoryId.Location = new System.Drawing.Point(56, 131);
+            this.lblCategoryId.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblCategoryId.Name = "lblCategoryId";
-            this.lblCategoryId.Size = new System.Drawing.Size(46, 13);
+            this.lblCategoryId.Size = new System.Drawing.Size(122, 32);
             this.lblCategoryId.TabIndex = 5;
             this.lblCategoryId.Text = "Kategori";
             // 
             // lblProductName2
             // 
             this.lblProductName2.AutoSize = true;
-            this.lblProductName2.Location = new System.Drawing.Point(21, 20);
+            this.lblProductName2.Location = new System.Drawing.Point(56, 48);
+            this.lblProductName2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblProductName2.Name = "lblProductName2";
-            this.lblProductName2.Size = new System.Drawing.Size(48, 13);
+            this.lblProductName2.Size = new System.Drawing.Size(125, 32);
             this.lblProductName2.TabIndex = 4;
             this.lblProductName2.Text = "Ürün Adı";
             // 
@@ -259,18 +282,21 @@ namespace Northwind.WebFormsUI
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(700, 231);
+            this.groupBox1.Location = new System.Drawing.Point(1865, 937);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(682, 153);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.groupBox1.Size = new System.Drawing.Size(1819, 365);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Güncelle";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(474, 95);
+            this.btnUpdate.Location = new System.Drawing.Point(1264, 227);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(116, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(309, 86);
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -278,90 +304,101 @@ namespace Northwind.WebFormsUI
             // 
             // tbxQuantityPerUnitUpdate
             // 
-            this.tbxQuantityPerUnitUpdate.Location = new System.Drawing.Point(474, 52);
+            this.tbxQuantityPerUnitUpdate.Location = new System.Drawing.Point(1264, 124);
+            this.tbxQuantityPerUnitUpdate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxQuantityPerUnitUpdate.Name = "tbxQuantityPerUnitUpdate";
-            this.tbxQuantityPerUnitUpdate.Size = new System.Drawing.Size(116, 20);
+            this.tbxQuantityPerUnitUpdate.Size = new System.Drawing.Size(303, 38);
             this.tbxQuantityPerUnitUpdate.TabIndex = 13;
             // 
             // tbxStockUpdate
             // 
-            this.tbxStockUpdate.Location = new System.Drawing.Point(474, 17);
+            this.tbxStockUpdate.Location = new System.Drawing.Point(1264, 41);
+            this.tbxStockUpdate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxStockUpdate.Name = "tbxStockUpdate";
-            this.tbxStockUpdate.Size = new System.Drawing.Size(116, 20);
+            this.tbxStockUpdate.Size = new System.Drawing.Size(303, 38);
             this.tbxStockUpdate.TabIndex = 12;
             // 
             // tbxUnitPriceUpdate
             // 
-            this.tbxUnitPriceUpdate.Location = new System.Drawing.Point(73, 95);
+            this.tbxUnitPriceUpdate.Location = new System.Drawing.Point(195, 227);
+            this.tbxUnitPriceUpdate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxUnitPriceUpdate.Name = "tbxUnitPriceUpdate";
-            this.tbxUnitPriceUpdate.Size = new System.Drawing.Size(131, 20);
+            this.tbxUnitPriceUpdate.Size = new System.Drawing.Size(343, 38);
             this.tbxUnitPriceUpdate.TabIndex = 11;
             // 
             // tbxProductNameUpdate
             // 
-            this.tbxProductNameUpdate.Location = new System.Drawing.Point(73, 17);
+            this.tbxProductNameUpdate.Location = new System.Drawing.Point(195, 41);
+            this.tbxProductNameUpdate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbxProductNameUpdate.Name = "tbxProductNameUpdate";
-            this.tbxProductNameUpdate.Size = new System.Drawing.Size(279, 20);
+            this.tbxProductNameUpdate.Size = new System.Drawing.Size(737, 38);
             this.tbxProductNameUpdate.TabIndex = 10;
             // 
             // cbxCategoryUpdate
             // 
             this.cbxCategoryUpdate.FormattingEnabled = true;
-            this.cbxCategoryUpdate.Location = new System.Drawing.Point(73, 52);
+            this.cbxCategoryUpdate.Location = new System.Drawing.Point(195, 124);
+            this.cbxCategoryUpdate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cbxCategoryUpdate.Name = "cbxCategoryUpdate";
-            this.cbxCategoryUpdate.Size = new System.Drawing.Size(279, 21);
+            this.cbxCategoryUpdate.Size = new System.Drawing.Size(737, 39);
             this.cbxCategoryUpdate.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(396, 55);
+            this.label1.Location = new System.Drawing.Point(1056, 131);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(161, 32);
             this.label1.TabIndex = 8;
             this.label1.Text = "Birim Adedi";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(396, 20);
+            this.label2.Location = new System.Drawing.Point(1056, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(153, 32);
             this.label2.TabIndex = 7;
             this.label2.Text = "Stok Adedi";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 95);
+            this.label3.Location = new System.Drawing.Point(56, 227);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(77, 32);
             this.label3.TabIndex = 6;
             this.label3.Text = "Fiyat";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 55);
+            this.label4.Location = new System.Drawing.Point(56, 131);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(122, 32);
             this.label4.TabIndex = 5;
             this.label4.Text = "Kategori";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 20);
+            this.label6.Location = new System.Drawing.Point(56, 48);
+            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.Size = new System.Drawing.Size(125, 32);
             this.label6.TabIndex = 4;
             this.label6.Text = "Ürün Adı";
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(1063, 615);
+            this.btnRemove.Location = new System.Drawing.Point(2820, 513);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.Size = new System.Drawing.Size(200, 55);
             this.btnRemove.TabIndex = 5;
             this.btnRemove.Text = "Sil";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -369,15 +406,16 @@ namespace Northwind.WebFormsUI
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1388, 673);
+            this.ClientSize = new System.Drawing.Size(3701, 1605);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbxProductAdd);
             this.Controls.Add(this.gbxProductName);
             this.Controls.Add(this.gbxCategory);
             this.Controls.Add(this.dgwProduct);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Form1";
             this.Text = "Ürünler";
             this.Load += new System.EventHandler(this.Form1_Load);

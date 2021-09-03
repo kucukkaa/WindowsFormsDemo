@@ -5,6 +5,7 @@ using Northwind.DataAccess.Abstract;
 using Northwind.DataAccess.Concrete;
 using Northwind.DataAccess.Concrete.EntityFramework;
 using Northwind.Entities.Concrete;
+using Northwind.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,21 @@ namespace Northwind.Bussiness.Concrete
         public List<Product> GetProdcutsByProductName(string productName)
         {
             return _productDal.GetAll(p => p.ProductName.ToLower().Contains(productName.ToLower()));
+        }
+
+        public List<ProductDetailDto> GetProductsWithCategoryName()
+        {
+            return _productDal.GetProductsWithCategoryName();
+        }
+
+        public List<ProductDetailDto> GetProductsWithCategoryNameByCategoryId(int categoryId)
+        {
+            return _productDal.GetProductsWithCategoryName(p => p.CategoryId == categoryId);
+        }
+
+        public List<ProductDetailDto> GetProductsWithCategoryNameByProductName(string productName)
+        {
+            return _productDal.GetProductsWithCategoryName(p => p.ProductName.ToLower().Contains(productName.ToLower()));
         }
 
         public void Update(Product product)
