@@ -167,7 +167,7 @@ namespace Northwind.WebFormsUI
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.InnerException.InnerException.Message);
+                    MessageBox.Show(exception.Message);
                 }
             }
 
