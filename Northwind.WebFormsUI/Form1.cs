@@ -26,7 +26,7 @@ namespace Northwind.WebFormsUI
 
         private IProductService _productService;
         private ICategoryService _categoryService;
-        
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -87,37 +87,53 @@ namespace Northwind.WebFormsUI
         {
             try
             {
-            _productService.Add(new Product
+                DialogResult answer = MessageBox.Show("Ürün eklemek istediğinizden emin misiniz?", "Ürün ekleme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (answer == DialogResult.Yes)
                 {
-                    CategoryId = Convert.ToInt32(cbxCategoryId.SelectedValue),
-                    ProductName = tbxProductName2.Text,
-                    UnitPrice = Convert.ToDecimal(tbxUnitPrice.Text),
-                    UnitsInStock = Convert.ToInt16(tbxStock.Text),
-                    QuantityPerUnit = tbxQuantityPerUnit.Text,
-                });
-                MessageBox.Show("Ürün Eklendi!");
+                    _productService.Add(new Product
+                    {
+                        CategoryId = Convert.ToInt32(cbxCategoryId.SelectedValue),
+                        ProductName = tbxProductName2.Text,
+                        UnitPrice = Convert.ToDecimal(tbxUnitPrice.Text),
+                        UnitsInStock = Convert.ToInt16(tbxStock.Text),
+                        QuantityPerUnit = tbxQuantityPerUnit.Text,
+                    });
+                    MessageBox.Show("Ürün eklendi!");
+                }
                 LoadProducts();
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show(exception.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            _productService.Update(new Product
+            try
             {
-                ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
-                ProductName = tbxProductNameUpdate.Text,
-                CategoryId = Convert.ToInt32(cbxCategoryUpdate.SelectedValue),
-                UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text),
-                UnitsInStock = Convert.ToInt16(tbxStockUpdate.Text),
-                QuantityPerUnit = tbxQuantityPerUnitUpdate.Text
-            });
+                DialogResult answer = MessageBox.Show("Ürünü güncellemek istediğinizden emin misiniz?", "Ürün güncelleme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            MessageBox.Show("Ürün Güncellendi!");
-            LoadProducts();
+                if (answer == DialogResult.Yes)
+                {
+                    _productService.Update(new Product
+                    {
+                        ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
+                        ProductName = tbxProductNameUpdate.Text,
+                        CategoryId = Convert.ToInt32(cbxCategoryUpdate.SelectedValue),
+                        UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text),
+                        UnitsInStock = Convert.ToInt16(tbxStockUpdate.Text),
+                        QuantityPerUnit = tbxQuantityPerUnitUpdate.Text
+                    });
+                    MessageBox.Show("Ürün Güncellendi!");
+                }
+                LoadProducts();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgwProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -132,24 +148,30 @@ namespace Northwind.WebFormsUI
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if(dgwProduct.CurrentRow != null)
+
+            DialogResult answer = MessageBox.Show("Ürünü silmek istediğinizden emin misiniz?", "Ürün silme", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dgwProduct.CurrentRow != null && answer == DialogResult.Yes)
             {
                 try
                 {
-                    _productService.Delete(new Product
+                    Product tempProduct = new Product()
                     {
-                        ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value)
-                    });
-                    MessageBox.Show("Ürün Silindi!");
+                        ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
+                        ProductName = dgwProduct.CurrentRow.Cells[2].Value.ToString()
+                    };
+                    
+                    _productService.Delete(tempProduct);
+                    MessageBox.Show(tempProduct.ProductName + " Silindi!");
                     LoadProducts();
                 }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.InnerException.InnerException.Message);
                 }
-            }            
-            
-            
+            }
+
+
         }
     }
 }
