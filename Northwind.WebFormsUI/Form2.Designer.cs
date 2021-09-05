@@ -58,9 +58,11 @@ namespace Northwind.WebFormsUI
             this.gbxProductDetail.Controls.Add(this.cbxCategory);
             this.gbxProductDetail.Controls.Add(this.lblProductName);
             this.gbxProductDetail.Controls.Add(this.tbxProductName);
-            this.gbxProductDetail.Location = new System.Drawing.Point(12, 12);
+            this.gbxProductDetail.Location = new System.Drawing.Point(24, 23);
+            this.gbxProductDetail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gbxProductDetail.Name = "gbxProductDetail";
-            this.gbxProductDetail.Size = new System.Drawing.Size(776, 177);
+            this.gbxProductDetail.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbxProductDetail.Size = new System.Drawing.Size(1552, 340);
             this.gbxProductDetail.TabIndex = 0;
             this.gbxProductDetail.TabStop = false;
             this.gbxProductDetail.Text = "Ürün Bilgileri";
@@ -68,90 +70,101 @@ namespace Northwind.WebFormsUI
             // lblUnitPrice
             // 
             this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Location = new System.Drawing.Point(19, 149);
+            this.lblUnitPrice.Location = new System.Drawing.Point(38, 287);
+            this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(29, 13);
+            this.lblUnitPrice.Size = new System.Drawing.Size(59, 25);
             this.lblUnitPrice.TabIndex = 10;
             this.lblUnitPrice.Text = "Fiyat";
             // 
             // lblUnitsInStock
             // 
             this.lblUnitsInStock.AutoSize = true;
-            this.lblUnitsInStock.Location = new System.Drawing.Point(19, 123);
+            this.lblUnitsInStock.Location = new System.Drawing.Point(38, 237);
+            this.lblUnitsInStock.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUnitsInStock.Name = "lblUnitsInStock";
-            this.lblUnitsInStock.Size = new System.Drawing.Size(59, 13);
+            this.lblUnitsInStock.Size = new System.Drawing.Size(116, 25);
             this.lblUnitsInStock.TabIndex = 9;
             this.lblUnitsInStock.Text = "Stok Adedi";
             // 
             // tbxUnitPrice
             // 
-            this.tbxUnitPrice.Location = new System.Drawing.Point(87, 146);
+            this.tbxUnitPrice.Location = new System.Drawing.Point(174, 281);
+            this.tbxUnitPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbxUnitPrice.Name = "tbxUnitPrice";
-            this.tbxUnitPrice.Size = new System.Drawing.Size(100, 20);
+            this.tbxUnitPrice.Size = new System.Drawing.Size(196, 31);
             this.tbxUnitPrice.TabIndex = 8;
             // 
             // tbxUnitsInStock
             // 
-            this.tbxUnitsInStock.Location = new System.Drawing.Point(87, 120);
+            this.tbxUnitsInStock.Location = new System.Drawing.Point(174, 231);
+            this.tbxUnitsInStock.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbxUnitsInStock.Name = "tbxUnitsInStock";
-            this.tbxUnitsInStock.Size = new System.Drawing.Size(100, 20);
+            this.tbxUnitsInStock.Size = new System.Drawing.Size(196, 31);
             this.tbxUnitsInStock.TabIndex = 7;
             // 
             // tbxQuantityPerUnit
             // 
-            this.tbxQuantityPerUnit.Location = new System.Drawing.Point(87, 94);
+            this.tbxQuantityPerUnit.Location = new System.Drawing.Point(174, 181);
+            this.tbxQuantityPerUnit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbxQuantityPerUnit.Name = "tbxQuantityPerUnit";
-            this.tbxQuantityPerUnit.Size = new System.Drawing.Size(672, 20);
+            this.tbxQuantityPerUnit.Size = new System.Drawing.Size(1340, 31);
             this.tbxQuantityPerUnit.TabIndex = 6;
             // 
             // lblQuantityPerUnit
             // 
             this.lblQuantityPerUnit.AutoSize = true;
-            this.lblQuantityPerUnit.Location = new System.Drawing.Point(19, 97);
+            this.lblQuantityPerUnit.Location = new System.Drawing.Point(38, 187);
+            this.lblQuantityPerUnit.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblQuantityPerUnit.Name = "lblQuantityPerUnit";
-            this.lblQuantityPerUnit.Size = new System.Drawing.Size(59, 13);
+            this.lblQuantityPerUnit.Size = new System.Drawing.Size(121, 25);
             this.lblQuantityPerUnit.TabIndex = 5;
             this.lblQuantityPerUnit.Text = "Birim Adedi";
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(19, 70);
+            this.lblCategory.Location = new System.Drawing.Point(38, 135);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(46, 13);
+            this.lblCategory.Size = new System.Drawing.Size(92, 25);
             this.lblCategory.TabIndex = 4;
             this.lblCategory.Text = "Kategori";
             // 
             // cbxCategory
             // 
             this.cbxCategory.FormattingEnabled = true;
-            this.cbxCategory.Location = new System.Drawing.Point(87, 67);
+            this.cbxCategory.Location = new System.Drawing.Point(174, 129);
+            this.cbxCategory.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(200, 21);
+            this.cbxCategory.Size = new System.Drawing.Size(396, 33);
             this.cbxCategory.TabIndex = 3;
             // 
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(19, 44);
+            this.lblProductName.Location = new System.Drawing.Point(38, 85);
+            this.lblProductName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(48, 13);
+            this.lblProductName.Size = new System.Drawing.Size(95, 25);
             this.lblProductName.TabIndex = 2;
             this.lblProductName.Text = "Ürün Adı";
             // 
             // tbxProductName
             // 
-            this.tbxProductName.Location = new System.Drawing.Point(87, 41);
+            this.tbxProductName.Location = new System.Drawing.Point(174, 79);
+            this.tbxProductName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbxProductName.Name = "tbxProductName";
-            this.tbxProductName.Size = new System.Drawing.Size(672, 20);
+            this.tbxProductName.Size = new System.Drawing.Size(1340, 31);
             this.tbxProductName.TabIndex = 1;
             // 
             // cbxUpdateAllow
             // 
             this.cbxUpdateAllow.AutoSize = true;
-            this.cbxUpdateAllow.Location = new System.Drawing.Point(153, 204);
+            this.cbxUpdateAllow.Location = new System.Drawing.Point(306, 392);
+            this.cbxUpdateAllow.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbxUpdateAllow.Name = "cbxUpdateAllow";
-            this.cbxUpdateAllow.Size = new System.Drawing.Size(161, 17);
+            this.cbxUpdateAllow.Size = new System.Drawing.Size(321, 29);
             this.cbxUpdateAllow.TabIndex = 0;
             this.cbxUpdateAllow.Text = "Ürünü güncellemek istiyorum";
             this.cbxUpdateAllow.UseVisualStyleBackColor = true;
@@ -159,9 +172,10 @@ namespace Northwind.WebFormsUI
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(627, 204);
+            this.btnClose.Location = new System.Drawing.Point(1254, 392);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(69, 24);
+            this.btnClose.Size = new System.Drawing.Size(138, 46);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Kapat";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -169,9 +183,10 @@ namespace Northwind.WebFormsUI
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(702, 204);
+            this.btnUpdate.Location = new System.Drawing.Point(1404, 392);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(69, 24);
+            this.btnUpdate.Size = new System.Drawing.Size(138, 46);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -179,13 +194,14 @@ namespace Northwind.WebFormsUI
             // 
             // FormUpdateProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 257);
+            this.ClientSize = new System.Drawing.Size(1600, 494);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbxProductDetail);
             this.Controls.Add(this.cbxUpdateAllow);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FormUpdateProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Update";

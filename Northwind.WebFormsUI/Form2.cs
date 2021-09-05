@@ -54,11 +54,13 @@ namespace Northwind.WebFormsUI
             if (!cbxUpdateAllow.Checked)
             {
                 gbxProductDetail.Enabled = false;
+                btnUpdate.Enabled = false;
 
             }
             else
             {
                 gbxProductDetail.Enabled = true;
+                btnUpdate.Enabled = true;
             }
         }
 
@@ -85,7 +87,8 @@ namespace Northwind.WebFormsUI
             });
             Form1 form1 = (Form1)Application.OpenForms["Form1"];
             form1.LoadProducts();
-            MessageBox.Show("Ürün Güncellendi!");
+            MessageBox.Show("Ürün Güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
     }
 }

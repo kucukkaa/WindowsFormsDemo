@@ -46,6 +46,7 @@
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="DTOs\ProductDetailDto.cs" />
+    <Compile Include="DTOs\ProductToSell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

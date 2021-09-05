@@ -3,6 +3,7 @@ using Northwind.Bussiness.Concrete;
 using Northwind.Bussiness.DependencyResolvers.Ninject;
 using Northwind.DataAccess.Concrete.EntityFramework;
 using Northwind.Entities.Concrete;
+using Northwind.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,8 @@ namespace Northwind.WebFormsUI
 
         private IProductService _productService;
         private ICategoryService _categoryService;
+        private List<ProductToSell> productsToSell = new List<ProductToSell>();
+        private List<Product> productsToSellTemp; //to change the referance??
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,10 +45,9 @@ namespace Northwind.WebFormsUI
                 CategoryName = ""
             };
 
-            //cbxCategory.Items.Add(emptyCategory);
             List<Category> categories = _categoryService.GetAll();
             categories.Insert(0, emptyCategory);
-            
+
 
             cbxCategory.DataSource = categories;
             cbxCategory.DisplayMember = "CategoryName";
@@ -56,6 +58,13 @@ namespace Northwind.WebFormsUI
         {
             dgwProduct.DataSource = _productService.GetProductsWithCategoryName();
             dgwProduct.Columns["CategoryId"].Visible = false;
+
+        }
+
+        public void LoadProductsToSell()
+        {
+            dgwProductToSell.DataSource = productsToSellTemp;
+            dgwProductToSell.DataSource = productsToSell;
         }
 
 
@@ -134,5 +143,29 @@ namespace Northwind.WebFormsUI
             FormAddProduct formAdd = new FormAddProduct();
             formAdd.ShowDialog();
         }
+
+        private void btnAddToSell_Click(object sender, EventArgs e)
+        {
+            ProductToSell productToSell = new ProductToSell()
+            {
+                ProductId = (int)(dgwProduct.CurrentRow.Cells["ProductId"].Value),
+                ProductName = dgwProduct.CurrentRow.Cells["ProductName"].Value.ToString(),
+                UnitPrice = Convert.ToDecimal(dgwProduct.CurrentRow.Cells["UnitPrice"].Value),
+                UnitsInStock = Convert.ToInt16(dgwProduct.CurrentRow.Cells["UnitsInStock"].Value),
+                Quantity = 1
+            };
+
+            if (productsToSell.Find(p=>p.ProductId == productToSell.ProductId) == null)
+            {
+                productsToSell.Add(productToSell);
+            }
+            else
+            {
+                productsToSell[productsToSell.FindIndex(p=>p.ProductId==productToSell.ProductId)].Quantity +=1;
+            }
+
+            LoadProductsToSell();
+        }
+
     }
 }
