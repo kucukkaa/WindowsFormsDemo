@@ -36,33 +36,21 @@ namespace Northwind.WebFormsUI
             this.gbxProductName = new System.Windows.Forms.GroupBox();
             this.tbxProductName = new System.Windows.Forms.TextBox();
             this.lblProductName = new System.Windows.Forms.Label();
-            this.gbxProductAdd = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.tbxQuantityPerUnit = new System.Windows.Forms.TextBox();
-            this.tbxStock = new System.Windows.Forms.TextBox();
-            this.tbxUnitPrice = new System.Windows.Forms.TextBox();
-            this.tbxProductName2 = new System.Windows.Forms.TextBox();
-            this.cbxCategoryId = new System.Windows.Forms.ComboBox();
-            this.lblQuantityPerUnit = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
-            this.lblUnitPrice = new System.Windows.Forms.Label();
-            this.lblCategoryId = new System.Windows.Forms.Label();
-            this.lblProductName2 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProduct)).BeginInit();
             this.gbxCategory.SuspendLayout();
             this.gbxProductName.SuspendLayout();
-            this.gbxProductAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgwProduct
             // 
             this.dgwProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwProduct.Location = new System.Drawing.Point(12, 136);
+            this.dgwProduct.Location = new System.Drawing.Point(12, 165);
             this.dgwProduct.Name = "dgwProduct";
             this.dgwProduct.RowHeadersWidth = 102;
-            this.dgwProduct.Size = new System.Drawing.Size(948, 238);
+            this.dgwProduct.Size = new System.Drawing.Size(948, 416);
             this.dgwProduct.TabIndex = 0;
             // 
             // gbxCategory
@@ -104,7 +92,6 @@ namespace Northwind.WebFormsUI
             this.gbxProductName.TabIndex = 2;
             this.gbxProductName.TabStop = false;
             this.gbxProductName.Text = "Ürün Adına Göre Ara";
-            this.gbxProductName.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // tbxProductName
             // 
@@ -123,120 +110,9 @@ namespace Northwind.WebFormsUI
             this.lblProductName.TabIndex = 0;
             this.lblProductName.Text = "Ürün Adı";
             // 
-            // gbxProductAdd
-            // 
-            this.gbxProductAdd.Controls.Add(this.btnAdd);
-            this.gbxProductAdd.Controls.Add(this.tbxQuantityPerUnit);
-            this.gbxProductAdd.Controls.Add(this.tbxStock);
-            this.gbxProductAdd.Controls.Add(this.tbxUnitPrice);
-            this.gbxProductAdd.Controls.Add(this.tbxProductName2);
-            this.gbxProductAdd.Controls.Add(this.cbxCategoryId);
-            this.gbxProductAdd.Controls.Add(this.lblQuantityPerUnit);
-            this.gbxProductAdd.Controls.Add(this.lblStock);
-            this.gbxProductAdd.Controls.Add(this.lblUnitPrice);
-            this.gbxProductAdd.Controls.Add(this.lblCategoryId);
-            this.gbxProductAdd.Controls.Add(this.lblProductName2);
-            this.gbxProductAdd.Location = new System.Drawing.Point(12, 393);
-            this.gbxProductAdd.Name = "gbxProductAdd";
-            this.gbxProductAdd.Size = new System.Drawing.Size(682, 153);
-            this.gbxProductAdd.TabIndex = 3;
-            this.gbxProductAdd.TabStop = false;
-            this.gbxProductAdd.Text = "Yeni Ürün Ekle";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(474, 95);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 36);
-            this.btnAdd.TabIndex = 14;
-            this.btnAdd.Text = "Ekle";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // tbxQuantityPerUnit
-            // 
-            this.tbxQuantityPerUnit.Location = new System.Drawing.Point(474, 52);
-            this.tbxQuantityPerUnit.Name = "tbxQuantityPerUnit";
-            this.tbxQuantityPerUnit.Size = new System.Drawing.Size(116, 20);
-            this.tbxQuantityPerUnit.TabIndex = 13;
-            // 
-            // tbxStock
-            // 
-            this.tbxStock.Location = new System.Drawing.Point(474, 17);
-            this.tbxStock.Name = "tbxStock";
-            this.tbxStock.Size = new System.Drawing.Size(116, 20);
-            this.tbxStock.TabIndex = 12;
-            // 
-            // tbxUnitPrice
-            // 
-            this.tbxUnitPrice.Location = new System.Drawing.Point(73, 95);
-            this.tbxUnitPrice.Name = "tbxUnitPrice";
-            this.tbxUnitPrice.Size = new System.Drawing.Size(131, 20);
-            this.tbxUnitPrice.TabIndex = 11;
-            // 
-            // tbxProductName2
-            // 
-            this.tbxProductName2.Location = new System.Drawing.Point(73, 17);
-            this.tbxProductName2.Name = "tbxProductName2";
-            this.tbxProductName2.Size = new System.Drawing.Size(279, 20);
-            this.tbxProductName2.TabIndex = 10;
-            // 
-            // cbxCategoryId
-            // 
-            this.cbxCategoryId.FormattingEnabled = true;
-            this.cbxCategoryId.Location = new System.Drawing.Point(73, 52);
-            this.cbxCategoryId.Name = "cbxCategoryId";
-            this.cbxCategoryId.Size = new System.Drawing.Size(279, 21);
-            this.cbxCategoryId.TabIndex = 9;
-            // 
-            // lblQuantityPerUnit
-            // 
-            this.lblQuantityPerUnit.AutoSize = true;
-            this.lblQuantityPerUnit.Location = new System.Drawing.Point(396, 55);
-            this.lblQuantityPerUnit.Name = "lblQuantityPerUnit";
-            this.lblQuantityPerUnit.Size = new System.Drawing.Size(59, 13);
-            this.lblQuantityPerUnit.TabIndex = 8;
-            this.lblQuantityPerUnit.Text = "Birim Adedi";
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(396, 20);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(59, 13);
-            this.lblStock.TabIndex = 7;
-            this.lblStock.Text = "Stok Adedi";
-            // 
-            // lblUnitPrice
-            // 
-            this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Location = new System.Drawing.Point(21, 95);
-            this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(29, 13);
-            this.lblUnitPrice.TabIndex = 6;
-            this.lblUnitPrice.Text = "Fiyat";
-            // 
-            // lblCategoryId
-            // 
-            this.lblCategoryId.AutoSize = true;
-            this.lblCategoryId.Location = new System.Drawing.Point(21, 55);
-            this.lblCategoryId.Name = "lblCategoryId";
-            this.lblCategoryId.Size = new System.Drawing.Size(46, 13);
-            this.lblCategoryId.TabIndex = 5;
-            this.lblCategoryId.Text = "Kategori";
-            // 
-            // lblProductName2
-            // 
-            this.lblProductName2.AutoSize = true;
-            this.lblProductName2.Location = new System.Drawing.Point(21, 20);
-            this.lblProductName2.Name = "lblProductName2";
-            this.lblProductName2.Size = new System.Drawing.Size(48, 13);
-            this.lblProductName2.TabIndex = 4;
-            this.lblProductName2.Text = "Ürün Adı";
-            // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(979, 136);
+            this.btnRemove.Location = new System.Drawing.Point(979, 278);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 5;
@@ -246,7 +122,7 @@ namespace Northwind.WebFormsUI
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(979, 165);
+            this.btnUpdate.Location = new System.Drawing.Point(979, 194);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 6;
@@ -254,14 +130,24 @@ namespace Northwind.WebFormsUI
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(979, 165);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Ekle";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 564);
+            this.ClientSize = new System.Drawing.Size(1074, 599);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.gbxProductAdd);
             this.Controls.Add(this.gbxProductName);
             this.Controls.Add(this.gbxCategory);
             this.Controls.Add(this.dgwProduct);
@@ -274,8 +160,6 @@ namespace Northwind.WebFormsUI
             this.gbxCategory.PerformLayout();
             this.gbxProductName.ResumeLayout(false);
             this.gbxProductName.PerformLayout();
-            this.gbxProductAdd.ResumeLayout(false);
-            this.gbxProductAdd.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -289,20 +173,9 @@ namespace Northwind.WebFormsUI
         private System.Windows.Forms.GroupBox gbxProductName;
         private System.Windows.Forms.TextBox tbxProductName;
         private System.Windows.Forms.Label lblProductName;
-        private System.Windows.Forms.GroupBox gbxProductAdd;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox tbxQuantityPerUnit;
-        private System.Windows.Forms.TextBox tbxStock;
-        private System.Windows.Forms.TextBox tbxUnitPrice;
-        private System.Windows.Forms.TextBox tbxProductName2;
-        private System.Windows.Forms.ComboBox cbxCategoryId;
-        private System.Windows.Forms.Label lblQuantityPerUnit;
-        private System.Windows.Forms.Label lblStock;
-        private System.Windows.Forms.Label lblUnitPrice;
-        private System.Windows.Forms.Label lblCategoryId;
-        private System.Windows.Forms.Label lblProductName2;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
 
