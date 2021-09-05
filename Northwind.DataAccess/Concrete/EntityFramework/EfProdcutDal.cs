@@ -31,5 +31,7 @@ namespace Northwind.DataAccess.Concrete.EntityFramework
                 return data.ToList();
             }
         }
+
+
     }
 }

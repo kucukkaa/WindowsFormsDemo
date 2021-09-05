@@ -50,6 +50,11 @@ namespace Northwind.Bussiness.Concrete
             return _productDal.GetAll(p => p.ProductName.ToLower().Contains(productName.ToLower()));
         }
 
+        public Product GetProductById(int productId)
+        {
+            return _productDal.Get(p => p.ProductId == productId);
+        }
+
         public List<ProductDetailDto> GetProductsWithCategoryName()
         {
             return _productDal.GetProductsWithCategoryName();
