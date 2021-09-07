@@ -22,13 +22,13 @@ namespace Northwind.Bussiness.ValidationRules.FluentValidation
             RuleFor(p => p.UnitsInStock).GreaterThanOrEqualTo((short)0);
             RuleFor(p => p.UnitPrice).GreaterThan(10).When(p => p.CategoryId == 2);
 
-            RuleFor(p => p.ProductName).Must(StartWithA).WithMessage("Ürün adı A ile başlamalı");
+            //RuleFor(p => p.ProductName).Must(StartWithA).WithMessage("Ürün adı A ile başlamalı");
 
         }
 
-        private bool StartWithA(string arg)
-        {
-            return arg.StartsWith("A");
-        }
+        //private bool StartWithA(string arg)
+        //{
+        //    return arg.StartsWith("A");
+        //}
     }
 }

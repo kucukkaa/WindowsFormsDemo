@@ -20,6 +20,15 @@ namespace Northwind.Bussiness.DependencyResolvers.Ninject
 
             Bind<ICategoryService>().To<CategoryManager>().InSingletonScope();
             Bind<ICategoryDal>().To<EfCategoryDal>().InSingletonScope();
+
+            Bind<ICustomerService>().To<CustomerManager>().InSingletonScope();
+            Bind<ICustomerDal>().To<EfCustomerDal>().InSingletonScope();
+
+            Bind<IOrderDetailService>().To<OrderDetailManager>().InSingletonScope();
+            Bind<IOrderDetailDal>().To<EfOrderDetailDal>().InSingletonScope();
+
+            Bind<IOrderService>().To<OrderManager>().InSingletonScope();
+            Bind<IOrderDal>().To<EfOrderDal>().InSingletonScope();
         }
     }
 }

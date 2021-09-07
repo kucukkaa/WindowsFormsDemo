@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Northwind.DataAccess.Abstract
+namespace Northwind.Bussiness.Abstract
 {
-    public interface ICategoryDal : IEntityRepository<Category>
+    public interface ICustomerService
     {
-
+        List<Customer> GetAll();
     }
 }
