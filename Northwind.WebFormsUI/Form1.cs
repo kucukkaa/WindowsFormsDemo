@@ -61,10 +61,19 @@ namespace Northwind.WebFormsUI
 
         }
 
-        public void LoadProductsToSell()
+        private void LoadProductsToSell()
         {
             dgwProductToSell.DataSource = productsToSellTemp;
             dgwProductToSell.DataSource = productsToSell;
+        }
+
+        private void RemoveProductFromProductToSell (int ProductId)
+        {
+            if (productsToSell.Find(p => p.ProductId == ProductId) != null)
+            {
+                productsToSell.Remove(productsToSell.Find(p => p.ProductId == ProductId));
+                LoadProductsToSell();
+            }
         }
 
 
@@ -83,9 +92,9 @@ namespace Northwind.WebFormsUI
                 }
 
             }
-            catch
+            catch(Exception exception)
             {
-
+                MessageBox.Show(exception.Message);
             }
         }
 
@@ -102,7 +111,7 @@ namespace Northwind.WebFormsUI
         }
 
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
 
             DialogResult answer = MessageBox.Show("Ürünü silmek istediğinizden emin misiniz?", "Ürün silme", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -114,7 +123,7 @@ namespace Northwind.WebFormsUI
                     Product tempProduct = new Product()
                     {
                         ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
-                        ProductName = dgwProduct.CurrentRow.Cells[2].Value.ToString()
+                        ProductName = dgwProduct.CurrentRow.Cells["ProductName"].Value.ToString()
                     };
 
                     _productService.Delete(tempProduct);
@@ -126,7 +135,6 @@ namespace Northwind.WebFormsUI
                     MessageBox.Show(exception.Message);
                 }
             }
-
 
         }
 
@@ -155,6 +163,9 @@ namespace Northwind.WebFormsUI
                 Quantity = 1
             };
 
+            
+            
+            
             if (productsToSell.Find(p=>p.ProductId == productToSell.ProductId) == null)
             {
                 productsToSell.Add(productToSell);
@@ -167,5 +178,64 @@ namespace Northwind.WebFormsUI
             LoadProductsToSell();
         }
 
+        private void btnRemoveAll_Click(object sender, EventArgs e)
+        {
+            if (dgwProductToSell.CurrentRow != null)
+            {
+                try
+                {
+                    ProductToSell tempProduct = new ProductToSell()
+                    {
+                        ProductId = Convert.ToInt32(dgwProductToSell.CurrentRow.Cells["ProductId"].Value)
+                    };
+
+                    if (productsToSell.Find(p => p.ProductId == tempProduct.ProductId) != null)
+                    {
+                        RemoveProductFromProductToSell(tempProduct.ProductId);
+                    }
+                     
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (dgwProductToSell.CurrentRow != null)
+            {
+                try
+                {
+                    ProductToSell tempProduct = new ProductToSell()
+                    {
+                        ProductId = Convert.ToInt32(dgwProductToSell.CurrentRow.Cells["ProductId"].Value),
+                        Quantity = (int)dgwProductToSell.CurrentRow.Cells["Quantity"].Value
+                        
+                    };
+
+                    if (tempProduct.Quantity == 1)
+                    {
+                        RemoveProductFromProductToSell(tempProduct.ProductId);
+                    }
+                    else
+                    {
+                        (productsToSell.Find(p => p.ProductId == tempProduct.ProductId)).Quantity -= 1;
+                        LoadProductsToSell();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+        }
+
+        private void btnConfirmSale_Click(object sender, EventArgs e)
+        {
+            FormSellingScreen sellingScreen = new FormSellingScreen(productsToSell);
+            sellingScreen.ShowDialog();
+        }
     }
 }
