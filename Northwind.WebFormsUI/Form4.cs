@@ -18,13 +18,17 @@ namespace Northwind.WebFormsUI
     {
         List<ProductToSell> _productToSell;
         private ICustomerService _customerService;
-        
+        private IOrderService _orderService;
+        private IOrderDetailService _orderDetailService;
+
 
         public FormSellingScreen(List<ProductToSell> productToSell)
         {
             InitializeComponent();
             _productToSell = productToSell;
             _customerService = InstanceFactory.GetInstance<ICustomerService>();
+            _orderDetailService = InstanceFactory.GetInstance<IOrderDetailService>();
+            _orderService = InstanceFactory.GetInstance<IOrderService>();
             LoadProducts();
             LoadCustomers();
         }
@@ -38,6 +42,7 @@ namespace Northwind.WebFormsUI
         private void LoadCustomers()
         {
             cbxCustomers.DataSource = _customerService.GetAll();
+            cbxCustomers.ValueMember = "CustomerId";
         }
 
         private decimal Total()
@@ -56,14 +61,41 @@ namespace Northwind.WebFormsUI
             {
                 lblTotal.Text = "Toplam = " + (Total() - (Total() * (Convert.ToDecimal(tbxDiscount.Text)))).ToString();
             }
-            catch 
+            catch
             {
 
                 lblTotal.Text = "Toplam = " + Total().ToString();
             }
+
+        }
+
+        private void btnApplySale_Click(object sender, EventArgs e)
+        {
+            Order order = new Order()
+            {
+                CustomerId = cbxCustomers.SelectedValue.ToString(),
+                ShipCity = tbxAddress.Text,
+            };
+            var tempId = _orderService.Add(order);
             
+            foreach (var product in _productToSell)
+            {
+                OrderDetail orderDetail = new OrderDetail()
+                {
+                    ProductId = product.ProductId,
+                    Discount = Convert.ToDouble(tbxDiscount.Text),
+                    Quantity = Convert.ToInt16(product.Quantity),
+                    OrderId = tempId,
+                    UnitPrice = product.UnitPrice,
+                };
+                _orderDetailService.Add(orderDetail);
+            }
+            this.Close();
         }
 
         
     }
+
+
 }
+

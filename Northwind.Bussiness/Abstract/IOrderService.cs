@@ -9,6 +9,6 @@ namespace Northwind.Bussiness.Abstract
 {
     public interface IOrderService
     {
-        void Add(Order order);
+        int Add(Order order);
     }
 }

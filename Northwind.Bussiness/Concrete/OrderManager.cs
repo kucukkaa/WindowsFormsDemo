@@ -18,9 +18,11 @@ namespace Northwind.Bussiness.Concrete
             _orderDal = orderDal;
         }
 
-        public void Add(Order order)
+        public int Add(Order order)
         {
             _orderDal.Add(order);
+            var orderId = _orderDal.Get(p => p.CustomerId == order.CustomerId && p.ShipCity == order.ShipCity ).OrderId;//for take orderId for orderDetail table.
+            return orderId;
         }
     }
 }

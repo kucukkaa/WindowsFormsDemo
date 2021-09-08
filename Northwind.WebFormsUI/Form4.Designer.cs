@@ -37,6 +37,7 @@ namespace Northwind.WebFormsUI
             this.lblCity = new System.Windows.Forms.Label();
             this.tbxDiscount = new System.Windows.Forms.TextBox();
             this.lblDiscount = new System.Windows.Forms.Label();
+            this.btnApplySale = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,11 +113,22 @@ namespace Northwind.WebFormsUI
             this.lblDiscount.TabIndex = 7;
             this.lblDiscount.Text = "İndirim Oranı";
             // 
+            // btnApplySale
+            // 
+            this.btnApplySale.Location = new System.Drawing.Point(484, 327);
+            this.btnApplySale.Name = "btnApplySale";
+            this.btnApplySale.Size = new System.Drawing.Size(304, 94);
+            this.btnApplySale.TabIndex = 8;
+            this.btnApplySale.Text = "Satışı Onayla!!";
+            this.btnApplySale.UseVisualStyleBackColor = true;
+            this.btnApplySale.Click += new System.EventHandler(this.btnApplySale_Click);
+            // 
             // FormSellingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnApplySale);
             this.Controls.Add(this.lblDiscount);
             this.Controls.Add(this.tbxDiscount);
             this.Controls.Add(this.lblCity);
@@ -143,5 +155,6 @@ namespace Northwind.WebFormsUI
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.TextBox tbxDiscount;
         private System.Windows.Forms.Label lblDiscount;
+        private System.Windows.Forms.Button btnApplySale;
     }
 }

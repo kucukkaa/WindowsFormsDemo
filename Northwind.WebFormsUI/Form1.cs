@@ -92,9 +92,9 @@ namespace Northwind.WebFormsUI
                 }
 
             }
-            catch(Exception exception)
+            catch
             {
-                MessageBox.Show(exception.Message);
+                
             }
         }
 
@@ -162,9 +162,6 @@ namespace Northwind.WebFormsUI
                 UnitsInStock = Convert.ToInt16(dgwProduct.CurrentRow.Cells["UnitsInStock"].Value),
                 Quantity = 1
             };
-
-            
-            
             
             if (productsToSell.Find(p=>p.ProductId == productToSell.ProductId) == null)
             {
@@ -174,7 +171,6 @@ namespace Northwind.WebFormsUI
             {
                 productsToSell[productsToSell.FindIndex(p=>p.ProductId==productToSell.ProductId)].Quantity +=1;
             }
-
             LoadProductsToSell();
         }
 

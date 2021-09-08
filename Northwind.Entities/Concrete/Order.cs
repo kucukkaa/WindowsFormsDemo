@@ -12,8 +12,7 @@ namespace Northwind.Entities.Concrete
         public int OrderId { get; set; }
         public string CustomerId { get; set; }
         public string ShipCity { get; set; }
-        public Int16 Quantity { get; set; }
-        public double Discount { get; set; }
+  
 
     }
 }
